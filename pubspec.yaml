@@ -1,0 +1,46 @@
+name: basecoin
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  confetti: ^0.6.0
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  fl_chart: ^0.40.0
+  intl: ^0.17.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: 0.9.2
+  flutter_native_splash: 1.2.3
+  test: any
+
+flutter_icons:
+  android: "ic_launcher"
+  image_path_android: "assets/app_icons/android.png"
+  ios: true
+  image_path_ios: "assets/app_icons/ios.png"
+
+flutter_native_splash:
+  image: "assets/app_icons/splash.png"
+  color: "296ecb"
+  android: true
+  android_disable_fullscreen: true
+
+flutter:
+  
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/app_icons/
+    - assets/data/
+    - assets/data/ohlc/

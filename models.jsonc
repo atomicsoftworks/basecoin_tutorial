@@ -1,0 +1,70 @@
+// GENERATED FOR JSON TO DART MODEL
+[
+	// Useful links to work with this file:
+	// About jsonc: https://github.com/onury/jsonc
+	// Try jsonc: https://komkom.github.io
+	//
+	// To configure generator, go to Settings/Extensions/JSON To Dart Model
+	//
+	// Add your json objects here separated by commas.
+	// Note that you add class names to each object with key "__className":
+	// And avoid duplicate class names in this list for best results.
+	// FOR EXAMPLE:
+	/*
+
+	{
+		"__className": "UserPost", // <- The base class name of the object.
+		"userId": 1,
+		"id": 1, // To mark as required value, change "id" to "r@id".
+		"title": "Json To Dart Model", // To mark as a default value, change "title" to "d@title".
+		"body": "Json to Dart advanced..."
+	}
+
+	*/
+	{
+		"__className": "Assets",
+		"assets": [
+			{
+				"__className": "Asset",
+				"r@id": 0,
+				"r@name": "",
+				"r@symbol": "",
+                "description": "",
+				"max_supply": 21000000,
+				"circulating_supply": 117631212.1865,
+				"total_supply": 117631212.1865,
+                "r@rank": 0,
+				"r@price": 3052.2744168575787,
+				"r@volume_24h": 27856755809.35484,
+				"r@percent_change_1h": 1.20266791,
+				"r@percent_change_24h": 4.91859468,
+				"r@percent_change_7d": -13.78864512,
+				"r@percent_change_30d": -8.59286548,
+				"r@percent_change_60d": 39.72970001,
+				"r@percent_change_90d": 51.24109232,
+				"r@market_cap": 359042739580.7994,
+				"r@market_cap_dominance": 18.3345,
+				"r@fully_diluted_market_cap": 359042739580.8
+			}
+		]
+	},
+	{
+		"__className": "Ohlc",
+		"result": {
+			"r@one_minute": [], // 1m
+			"r@three_minutes": [], // 3m
+			"r@five_minutes": [], // 5m
+			"r@fifteen_minutes": [], // 15m
+			"r@thirty_minutes": [], // 30m
+			"r@one_hour": [], // 1h
+			"r@two_hours": [], // 2h
+			"r@four_hours": [], // 4h
+			"r@six_hours": [], // 6h
+			"r@twelve_hours": [], // 12h
+			"r@one_day": [], // 1d
+			"r@three_days": [], // 3d
+			"r@one_week": [], // 1w
+			"r@one_week_start_monday": [] // 1w (weekly start Monday)
+		}
+	}
+]
