@@ -4,8 +4,6 @@ import 'package:basecoin/components/pill_button.dart';
 import 'package:basecoin/components/portfolio_card.dart';
 import 'package:basecoin/components/price.dart';
 import 'package:basecoin/models/assets/asset.dart';
-import 'package:basecoin/utilities/colors.dart';
-import 'package:basecoin/utilities/device.dart';
 import 'package:basecoin/utilities/format.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,13 +21,10 @@ class AssetDetails extends StatefulWidget {
 class _AssetDetailsState extends State<AssetDetails> {
   @override
   Widget build(BuildContext context) {
-    final color = CryptoColors.parse(widget.asset.symbol);
     final theme = Theme.of(context);
-    final isDarkMode = Device.isDarkMode(context);
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: isDarkMode ? theme.primaryColor : color,
         title: Text(widget.asset.symbol.toUpperCase()),
         elevation: 0,
       ),
@@ -46,12 +41,11 @@ class _AssetDetailsState extends State<AssetDetails> {
                     child: Price(
                       amount: Format.toAmount(widget.asset.price),
                       percentChange: widget.asset.percentChange24h,
-                      // color: Colors.white,
                     ),
                   ),
                   PortfolioCard(
                     asset: widget.asset,
-                    lineColor: color,
+                    lineColor: theme.primaryColor,
                   ),
                   Container(
                     child: ChartFilter(
@@ -64,9 +58,7 @@ class _AssetDetailsState extends State<AssetDetails> {
                       padding: EdgeInsets.symmetric(
                         horizontal: 20,
                       ),
-                      child: Divider(
-                          // color: Colors.black45,
-                          )),
+                      child: Divider()),
                   Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 20,
@@ -79,9 +71,7 @@ class _AssetDetailsState extends State<AssetDetails> {
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     child: Text(
                       widget.asset.description ?? "",
-                      style: TextStyle(
-                          // color: Colors.black54,
-                          ),
+                      style: TextStyle(),
                       textAlign: TextAlign.justify,
                     ),
                   ),
@@ -99,12 +89,11 @@ class _AssetDetailsState extends State<AssetDetails> {
                   vertical: 8,
                 ),
                 child: PillButton(
-                  label: "Trade",
-                  color: color,
-                  radius: 200,
-                  onPressed: () async {
-                  }
-                ),
+                    label: "Trade",
+                    radius: 200,
+                    onPressed: () async {
+                      print("The button was pressed!");
+                    }),
               ),
             )
           ],

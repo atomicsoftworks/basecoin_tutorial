@@ -7,7 +7,6 @@ class PillButton extends StatelessWidget {
   final double? height;
   final bool isLoading;
   final double radius;
-  final Color color;
 
   PillButton({
     required this.label,
@@ -16,7 +15,6 @@ class PillButton extends StatelessWidget {
     this.style,
     this.height,
     this.radius = 200,
-    this.color = Colors.blue,
   });
 
   @override
@@ -27,21 +25,13 @@ class PillButton extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
       ),
       child: TextButton(
-        child: !isLoading
-            ? Text(
-                label,
-                style: style ?? TextStyle(fontSize: 18),
-              )
-            : Container(
-                height: 20,
-                width: 20,
-                child: CircularProgressIndicator(
-                  color: color,
-                ),
-              ),
-        onPressed: isLoading ? null : onPressed,
+        child: Text(
+          label,
+          style: style ?? TextStyle(fontSize: 18),
+        ),
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          primary: color,
+          primary: Theme.of(context).primaryColor,
           onPrimary: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius),

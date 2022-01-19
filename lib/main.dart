@@ -1,7 +1,6 @@
 import 'package:basecoin/manager/network_manager.dart';
 import 'package:basecoin/screens/asset_details.dart';
 import 'package:basecoin/utilities/colors.dart';
-import 'package:basecoin/utilities/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -20,27 +19,18 @@ class _AppState extends State<App> {
   final _assets = NetworkManager.instance.getAssets();
 
   @override
-  void initState() {
-    super.initState();
-
-    themeNotifier.addListener(() {
-      setState(() {});
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final primaryColor = AppColors.marinerBlue;
+
     return MaterialApp(
-      themeMode: themeNotifier.currentTheme(),
+      themeMode: ThemeMode.light,
       title: 'Basecoin',
       theme: ThemeData.light().copyWith(
         appBarTheme: AppBarTheme(
-          color: AppColors.marinerBlue,
+          color: primaryColor,
           systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
-        primaryColor: AppColors.marinerBlue,
-        backgroundColor: AppColors.lilyWhite,
-        textTheme: ThemeData.light().textTheme.copyWith(),
+        primaryColor: primaryColor,
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(primary: Colors.black),
         ),
@@ -50,7 +40,7 @@ class _AppState extends State<App> {
       ),
       darkTheme: ThemeData.dark().copyWith(
         appBarTheme: AppBarTheme(
-          color: AppColors.deepBlack,
+          color: primaryColor,
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(primary: Colors.white),
@@ -58,9 +48,9 @@ class _AppState extends State<App> {
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(primary: Colors.white),
         ),
-        primaryColor: AppColors.deepBlack,
+        primaryColor: primaryColor,
         backgroundColor: AppColors.deepBlack,
-        canvasColor: AppColors.bunkerBlack,
+        canvasColor: AppColors.deepBlack,
         scaffoldBackgroundColor: AppColors.deepBlack,
       ),
       home: FutureBuilder<Assets>(
